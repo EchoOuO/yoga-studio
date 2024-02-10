@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  /* border: solid 1px black; */
+}
+
+:root {
+  --page-padding: 20px;
+  --title-font-family: "Lora", serif;
+  --details-font-family: "Poppins", sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  padding: 20px 35px;
+  text-decoration: none;
+  border-radius: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-family: var(--title-font-family);
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: var(--title-font-family);
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-family: var(--title-font-family);
+}
+
+p,
+.button {
+  font-size: 1rem;
+  font-family: var(--details-font-family);
+}
+
+.small-block-words {
+  font-size: 0.9rem;
+}
+
+/* ---------------- */
+
+nav {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5%;
+  margin-bottom: 60px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.nav-brand {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu {
+  /* display: flex; */
+  width: 60%;
+}
+
+.nav-menu-item {
+  text-decoration: none;
+  list-style: none;
+}
+
+.nav-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-words-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--page-padding);
+  gap: 15px;
+}
+
+#title-yoga {
+  margin-left: 10px;
+  padding: 6px;
+  border-radius: 8px;
+
+  /* inline-block can make 'transform' work */
+  display: inline-block;
+  transform: rotate(10deg);
+}
+
+.header-button {
+  margin-bottom: 20px;
+}
+
+.header-details {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.header-small-block {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.header-img {
+  width: 80%;
+}
+
+/* ---------------- */
+
+.section-influencers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: var(--page-padding);
+  margin-bottom: 50px;
+}
+
+.influencers-img-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.influencers-img {
+  width: 250px;
+}
+
+.influencers-details {
+  text-align: center;
+}
+
+.influencers-button {
+  position: relative;
+  padding: 60px;
+  background-image: url(../assets/list-ellipse-img.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ---------------- */
+
+.section-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--page-padding);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.start-title {
+  width: 100%;
+  text-align: center;
+}
+
+.start-details {
+  text-align: center;
+}
+
+.start-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-img {
+  width: 350px;
+}
+
+.start-img-container {
+  position: relative;
+}
+
+.start-small-block {
+  position: absolute;
+  padding: 5px 15px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.start-small-block-1 {
+  left: 3%;
+  top: 16%;
+}
+
+.start-small-block-1 div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.start-small-block-2 {
+  right: 5%;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.small-block-img {
+  width: 40px;
+  height: 40px;
+}
+
+/* ---------------- */
+
+.section-workout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: var(--page-padding);
+}
+
+.workout-title {
+  text-align: center;
+}
+
+.workout-detail {
+  text-align: center;
+}
+
+.workout-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.workout-img {
+  /* position: absolute; */
+  width: 250px;
+}
+
+.workout-img-1 {
+  z-index: 1;
+  transform: translateX(-10%);
+}
+
+.workout-img-2 {
+  transform: translateX(10%) translateY(-30%);
+}
+
+.workout-small-block {
+  position: absolute;
+  z-index: 2;
+  padding: 12px 8px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workout-small-block-1 {
+  right: -15%;
+  top: 5%;
+}
+
+.workout-small-block-2 {
+  left: -10%;
+  bottom: 10%;
+}
