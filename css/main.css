@@ -1,12 +1,18 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
-  /* border: solid 1px black; */
+  box-sizing: border-box;
+  border: solid 1px black;
+}
+
+body{
+  overflow-x: hidden
 }
 
 :root {
-  --page-padding: 20px;
+  --small-page-padding: 20px;
+  --medium-page-padding: 50px;
+  --large-page-padding: 100px;
   --title-font-family: "Lora", serif;
   --details-font-family: "Poppins", sans-serif;
 }
@@ -37,11 +43,12 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
-  font-family: var(--title-font-family);
+  font-family: var(--title-font-family) 1345;
 }
 
 p,
-.button {
+.button,
+.nav-menu-item {
   font-size: 1rem;
   font-family: var(--details-font-family);
 }
@@ -53,10 +60,10 @@ p,
 /* ---------------- */
 
 nav {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-top: 5%;
+  padding-top: 20px;
   margin-bottom: 60px;
 }
 
@@ -65,6 +72,8 @@ header {
   flex-direction: column;
   align-items: center;
   margin-bottom: 60px;
+  padding: 0 var(--small-page-padding);
+  position: relative;
 }
 
 .nav-brand {
@@ -77,6 +86,9 @@ header {
 .nav-menu {
   /* display: flex; */
   width: 60%;
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .nav-menu-item {
@@ -85,18 +97,18 @@ header {
 }
 
 .nav-icon {
-  display: flex;
+  display: flex;1345
   justify-content: center;
   align-items: center;
   gap: 15px;
 }
 
 .header-words-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: var(--page-padding);
   gap: 15px;
 }
 
@@ -127,7 +139,8 @@ header {
 }
 
 .header-img {
-  width: 80%;
+  width: 300px;
+  z-index: -1;
 }
 
 /* ---------------- */
@@ -137,23 +150,25 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 60px;
-  padding: var(--page-padding);
+  gap: 50px;
+  padding: 0 var(--small-page-padding);
   margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
 .influencers-img-container {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
 }
 
 .influencers-img {
-  width: 250px;
+  width: 200px;
 }
 
 .influencers-details {
   text-align: center;
+  width: 300px;
 }
 
 .influencers-button {
@@ -171,13 +186,20 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--page-padding);
+  padding: 0 var(--small-page-padding);
   gap: 40px;
   margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.start-words-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 .start-title {
-  width: 100%;
   text-align: center;
 }
 
@@ -192,7 +214,7 @@ header {
 }
 
 .start-img {
-  width: 350px;
+  width: 300px;
 }
 
 .start-img-container {
@@ -238,15 +260,23 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  padding: var(--page-padding);
+  gap: 40px;
+  padding: 0 var(--small-page-padding);
+  flex-wrap: wrap;
+}
+
+.workout-words-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 .workout-title {
   text-align: center;
 }
 
-.workout-detail {
+.workout-details {
   text-align: center;
 }
 
@@ -289,4 +319,176 @@ header {
 .workout-small-block-2 {
   left: -10%;
   bottom: 10%;
+}
+
+/* ---------------- */
+
+@media screen and (min-width: 678px) {
+  h1 {
+    font-size: 6rem;
+    font-family: var(--title-font-family);
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-family: var(--title-font-family);
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-family: var(--title-font-family);
+  }
+
+  p,
+  .button,
+  .nav-menu-item {
+    font-size: 1rem;
+    font-family: var(--details-font-family);
+  }
+
+  .small-block-words {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- */
+  header {
+    padding: var(--small-page-padding) var(--medium-page-padding);
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+
+  .nav-menu-button {
+    display: none;
+  }
+
+  .header-words-container {
+    align-items: flex-start;
+    /* padding-left: 10%; */
+    width: 100%;
+  }
+
+  .header-details {
+    width: 30%;
+    text-align: left;
+  }
+
+  .header-img {
+    position: absolute;
+    right: -5%;
+    top: 15%;
+    width: 500px;
+  }
+
+  /* ---------------- */
+
+  .section-influencers {
+    flex-direction: row;
+    gap: 60px;
+    padding: 0 var(--medium-page-padding);
+  }
+
+  .influencers-img {
+    width: 300px;
+  }
+
+  .influencers-details {
+    text-align: left;
+  }
+
+  /* ---------------- */
+
+  .section-start {
+    flex-direction: row-reverse;
+    padding: var(--small-page-padding) var(--medium-page-padding);
+    justify-content: center;
+  }
+
+  .start-words-container {
+    align-items: flex-start;
+    width: 350px;
+  }
+
+  .start-title,
+  .start-details {
+    text-align: left;
+  }
+
+  .start-img {
+    width: 500px;
+  }
+
+  /* ---------------- */
+
+  .section-workout {
+    flex-direction: row;
+    padding: var(--small-page-padding) var(--medium-page-padding);
+    gap: 60px;
+    justify-content: center;
+  }
+
+  .workout-words-container {
+    align-items: flex-start;
+    width: 590px;
+  }
+
+  .workout-title,
+  .workout-details {
+    text-align: left;
+  }
+
+  .workout-img {
+    /* position: absolute; */
+    width: 250px;
+  }
+}
+
+/* 大螢幕的時候改成比例的寫法~ */
+
+@media screen and (min-width: 1024px) {
+  header {
+    padding: var(--small-page-padding) var(--large-page-padding);
+  }
+
+   /* ---------------- */
+
+  .section-influencers {
+    flex-direction: row;
+    gap: 60px;
+    padding: 0 var(--large-page-padding);
+  }
+
+  .influencers-img-container {
+    width: 70%;
+  }
+
+  .influencers-img {
+    width: auto;
+  }
+  
+   /* ---------------- */
+   
+   .section-start {
+    padding: var(--small-page-padding) var(--large-page-padding);
+  }
+
+  .start-img {
+    width: auto;
+  }
+
+   /* ---------------- */
+
+   .section-workout {
+    padding: var(--small-page-padding) var(--large-page-padding);
+    gap: 80px;
+  }
+
+  .workout-words-container {
+    width: auto;
+  }
+
+  .workout-img {
+    width: auto;
+  }
 }
