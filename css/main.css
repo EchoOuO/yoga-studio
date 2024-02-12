@@ -383,6 +383,8 @@ header {
 .workout-img {
   /* position: absolute; */
   width: 250px;
+  border: solid 10px var(--bg-color);
+  border-radius: 200px;
 }
 
 .workout-img-1 {
