@@ -7,6 +7,7 @@
 
 body{
   overflow-x: hidden
+  
 }
 
 :root {
@@ -15,6 +16,48 @@ body{
   --large-page-padding: 80px;
   --title-font-family: "Lora", serif;
   --details-font-family: "Poppins", sans-serif;
+
+  --white-color: #FFF;
+  --gradient-color: linear-gradient(to right, #FF52AF, #9F53FF)
+  --footer-text-color:#A197B4;
+  --bg-color: #F5F0FF;
+  --title-color: #220953;
+  --text-color: #4B3E65;
+  --influencer-img-color: #E5D9FD;
+  --newletter-text-color: #F5F0FF;
+  --container-color: #fff;
+}
+
+/* Dark mode color */
+.dark-theme {
+  --bg-color: #14092A;
+  --title-color: #D1C0F1;
+  --text-color: #A094B8;
+  --influencer-img-color: #372A51;
+  --newletter-text-color: #F5F0FF;
+  --container-color: #372A51;
+}
+
+.text-gradient-color {
+  /* -webkit-background-clip: text --> to make background limited in text */
+/* make text color = treansparent --> then the text color will be background */
+background: linear-gradient(to right, #FF52AF, #9F53FF);
+-webkit-background-clip: text;
+color: transparent;
+}
+
+#text-gradient-color {
+  /* -webkit-background-clip: text --> to make background limited in text */
+/* make text color = treansparent --> then the text color will be background */
+background: linear-gradient(to right, #FF52AF, #9F53FF);
+-webkit-background-clip: text;
+color: transparent;
+}
+
+
+.button-gradient-color {
+  background: linear-gradient(to right, #FF52AF, #9F53FF);
+  color: var(--white-color);
 }
 
 .hidden {
@@ -43,7 +86,7 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
-  font-family: var(--title-font-family) 1345;
+  font-family: var(--title-font-family);
 }
 
 p,
@@ -55,9 +98,15 @@ p,
 
 .small-block-words {
   font-size: 0.9rem;
+  font-family: var(--details-font-family);
 }
 
 /* ---------------- */
+
+main {
+  background-color: var(--bg-color);
+  transition: 0.5s;
+}
 
 nav {
   width: 100%;
@@ -94,6 +143,7 @@ header {
 .nav-menu-item {
   text-decoration: none;
   list-style: none;
+  color: var(--title-color);
 }
 
 .nav-icon {
@@ -103,6 +153,12 @@ header {
   gap: 15px;
 }
 
+.nav-mode-button {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
 .header-words-container {
   width: 100%;
   display: flex;
@@ -110,16 +166,21 @@ header {
   align-items: center;
   text-align: center;
   gap: 15px;
+  z-index: 1;
+}
+
+.header-title {
+  color: var(--title-color);
 }
 
 #title-yoga {
   margin-left: 10px;
-  padding: 6px;
-  border-radius: 8px;
+  padding: 0px 10px 3px 10px;
+  border-radius: 10%;
 
   /* inline-block can make 'transform' work */
   display: inline-block;
-  transform: rotate(10deg);
+  transform: rotate(10deg) translateX(5%);
 }
 
 .header-button {
@@ -129,6 +190,7 @@ header {
 .header-details {
   margin-top: 20px;
   margin-bottom: 20px;
+  color: var(--text-color);
 }
 
 .header-small-block {
@@ -136,11 +198,12 @@ header {
   justify-content: center;
   gap: 40px;
   margin-bottom: 20px;
+  color: var(--title-color)
 }
 
 .header-img {
   width: 300px;
-  z-index: -1;
+  z-index: 0;
 }
 
 /* ---------------- */
@@ -156,29 +219,54 @@ header {
   flex-wrap: wrap;
 }
 
+.influencer-title {
+  color: var(--title-color);
+  transform: translateY(20px)
+}
+
 .influencers-img-container {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
+.influencers-img-container > div {
+  position: relative;
+}
+
+.influencer-img-bg {
+  position: absolute;
+  border-radius: 150px;
+  background-color: var(--influencer-img-color);
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+  top: 30%;
+  bottom: 0;
+  left: -10%;
+  right: 0;
+  width: 240px;
+  height: 120px;
+}
+
 .influencers-img {
   width: 200px;
+  position: relative;
+  z-index: 1;
 }
+
 
 .influencers-details {
   text-align: center;
   width: 300px;
+  color: var(--text-color);
+  transform: translateY(20px)
 }
 
-.influencers-button {
-  position: relative;
-  padding: 60px;
-  background-image: url(../assets/list-ellipse-img.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.influencer-button {
+    cursor: pointer;
+    transform: translateY(20px)
 }
+
+
 
 /* ---------------- */
 
@@ -201,10 +289,12 @@ header {
 
 .start-title {
   text-align: center;
+  color: var(--title-color);
 }
 
 .start-details {
   text-align: center;
+  color: var(--text-color);
 }
 
 .start-img-container {
@@ -228,6 +318,7 @@ header {
   display: flex;
   align-items: center;
   gap: 5px;
+  background-color: var(--container-color);
 }
 
 .start-small-block-1 {
@@ -274,10 +365,12 @@ header {
 
 .workout-title {
   text-align: center;
+  color: var(--title-color);
 }
 
 .workout-details {
   text-align: center;
+  color: var(--text-color);
 }
 
 .workout-img-container {
@@ -305,10 +398,11 @@ header {
   position: absolute;
   z-index: 2;
   padding: 12px 8px;
-  border-radius: 20px;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   gap: 8px;
+  background-color: var(--container-color);
 }
 
 .workout-small-block-1 {
@@ -348,6 +442,8 @@ header {
 
   .small-block-words {
     font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--title-color);
   }
 
   /* ---------------- */
@@ -387,6 +483,15 @@ header {
     flex-direction: row;
     gap: 60px;
     padding: 0 var(--medium-page-padding);
+  }
+
+  .influencers-img-container {
+    gap: 90px;
+  }
+  
+  .influencer-img-bg {
+    width: 350px;
+    height: 150px;
   }
 
   .influencers-img {
@@ -449,6 +554,17 @@ header {
 @media screen and (min-width: 1400px) {
   header {
     padding: var(--small-page-padding) var(--large-page-padding);
+  }
+
+  .header-words-container {
+    padding-left: 100px;
+  }
+
+  .header-img {
+    position: absolute;
+    right: 5%;
+    top: 15%;
+    width: 500px;
   }
 
    /* ---------------- */

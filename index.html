@@ -24,9 +24,9 @@
     <main>
       <header>
         <nav>
-          <h3 class="nav-brand">Yoga</h3>
+          <h3 class="nav-brand text-gradient-color">Yoga</h3>
           <ul class="nav-menu">
-            <li class="nav-menu-item">Home</li>
+            <li class="nav-menu-item" id="text-gradient-color">Home</li>
             <li class="nav-menu-item">Health</li>
             <li class="nav-menu-item">Routine</li>
             <li class="nav-menu-item">Follow</li>
@@ -44,14 +44,18 @@
         <div class="hamburger-menu hidden"></div>
 
         <div class="header-words-container">
-          <h1>Choose Your</h1>
-          <h1>Best<span id="title-yoga">Yoga</span></h1>
-          <h1>Teacher</h1>
+          <h1 class="header-title">Choose Your</h1>
+          <h1 class="header-title">
+            Best<span class="button-gradient-color" id="title-yoga">Yoga</span>
+          </h1>
+          <h1 class="header-title">Teacher</h1>
           <p class="header-details">
             Calm your mind and body with the best yoga teachers available, relax
             your day and stay positive.
           </p>
-          <a class="button header-button" href="">Get Started Free ➜</a>
+          <a class="button header-button button-gradient-color" href=""
+            >Get Started Free ➜</a
+          >
           <div class="header-small-block">
             <div>
               <h2>300+</h2>
@@ -70,18 +74,21 @@
 
       <section class="section-influencers">
         <div class="influencers-img-container">
-          <h2>#01</h2>
-          <img
-            class="influencers-img"
-            src="./assets/Box-group-list.png"
-            alt=""
-          />
+          <h2 class="influencer-title">#01</h2>
+          <div>
+            <img
+              class="influencers-img"
+              src="./assets/Box-group-list.png"
+              alt=""
+            />
+            <div class="influencer-img-bg"></div>
+          </div>
         </div>
         <p class="influencers-details">
           Get a list of specific influencers in your niche at your fingertips so
           you can focus on managing your status.
         </p>
-        <a class="button influencers-button" href="">Next ➜</a>
+        <img class="influencer-button" src="./assets/Next-button.png" alt="" />
       </section>
 
       <!-- ---------- -->
@@ -94,7 +101,9 @@
             If you take care of your good health, take care of your mentality
             and lead a healthy life with positive thoughts every day.
           </p>
-          <a class="button start-button" href="">Let’s Start ➜</a>
+          <a class="button start-button button-gradient-color" href=""
+            >Let’s Start ➜</a
+          >
         </div>
 
         <div class="start-img-container">
@@ -108,12 +117,12 @@
             />
             <div>
               <p class="small-block-words">Heart Rate</p>
-              <p class="small-block-words">168 bpm</p>
+              <p class="small-block-words" id="text-gradient-color">168 bpm</p>
             </div>
           </div>
 
           <div class="start-small-block start-small-block-2">
-            <p class="small-block-words">500+</p>
+            <p class="small-block-words" id="text-gradient-color">500+</p>
             <p class="small-block-words">Free Courses</p>
           </div>
         </div>
@@ -128,7 +137,9 @@
             Take your routine at any time of your day, with the new videos and
             with the teachers who will guide you.
           </p>
-          <a class="button workout-button" href="">Get Started Free ➜</a>
+          <a class="button workout-button button-gradient-color" href=""
+            >Get Started Free ➜</a
+          >
         </div>
         <div class="workout-img-container">
           <img
@@ -143,11 +154,15 @@
           />
           <div class="workout-small-block workout-small-block-1">
             <img class="workout-icon" src="./assets/playbutton.png" alt="" />
-            <a class="small-block-words" href="">High Quality Video</a>
+            <a class="small-block-words" id="text-gradient-color" href=""
+              >High Quality Video</a
+            >
           </div>
           <div class="workout-small-block workout-small-block-2">
             <img class="workout-icon" src="./assets/run.png" alt="" />
-            <a class="small-block-words" href="">Professional Trainer</a>
+            <a class="small-block-words" id="text-gradient-color" href=""
+              >Professional Trainer</a
+            >
           </div>
         </div>
       </section>
@@ -157,5 +172,6 @@
       <section></section>
       <section></section>
     </main>
+    <script src="./js/main.js" defer></script>
   </body>
 </html>
