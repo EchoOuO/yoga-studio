@@ -5,9 +5,8 @@
   /* border: solid 1px black; */
 }
 
-body{
-  overflow-x: hidden
-  
+body {
+  overflow-x: hidden;
 }
 
 :root {
@@ -17,46 +16,46 @@ body{
   --title-font-family: "Lora", serif;
   --details-font-family: "Poppins", sans-serif;
 
-  --white-color: #FFF;
-  --gradient-color: linear-gradient(to right, #FF52AF, #9F53FF)
-  --footer-text-color:#A197B4;
-  --bg-color: #F5F0FF;
+  --white-color: #fff;
+  --gradient-color: linear-gradient(to right, #ff52af, #9f53ff);
+  --hover-gradient-color: linear-gradient(to right, #9f53ff, #ff52af);
+  --footer-text-color: #a197b4;
+  --bg-color: #f5f0ff;
   --title-color: #220953;
-  --text-color: #4B3E65;
-  --influencer-img-color: #E5D9FD;
-  --newletter-text-color: #F5F0FF;
+  --text-color: #4b3e65;
+  --influencer-img-color: #e5d9fd;
+  --newletter-text-color: #f5f0ff;
   --container-color: #fff;
 }
 
 /* Dark mode color */
 .dark-theme {
-  --bg-color: #14092A;
-  --title-color: #D1C0F1;
-  --text-color: #A094B8;
-  --influencer-img-color: #372A51;
-  --newletter-text-color: #F5F0FF;
-  --container-color: #372A51;
+  --bg-color: #14092a;
+  --title-color: #d1c0f1;
+  --text-color: #a094b8;
+  --influencer-img-color: #372a51;
+  --newletter-text-color: #f5f0ff;
+  --container-color: #372a51;
 }
 
 .text-gradient-color {
   /* -webkit-background-clip: text --> to make background limited in text */
-/* make text color = treansparent --> then the text color will be background */
-background: linear-gradient(to right, #FF52AF, #9F53FF);
--webkit-background-clip: text;
-color: transparent;
+  /* make text color = treansparent --> then the text color will be background */
+  background: linear-gradient(to right, #ff52af, #9f53ff);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 #text-gradient-color {
   /* -webkit-background-clip: text --> to make background limited in text */
-/* make text color = treansparent --> then the text color will be background */
-background: linear-gradient(to right, #FF52AF, #9F53FF);
--webkit-background-clip: text;
-color: transparent;
+  /* make text color = treansparent --> then the text color will be background */
+  background: linear-gradient(to right, #ff52af, #9f53ff);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-
 .button-gradient-color {
-  background: linear-gradient(to right, #FF52AF, #9F53FF);
+  background: var(--gradient-color);
   color: var(--white-color);
 }
 
@@ -68,6 +67,13 @@ color: transparent;
   padding: 20px 35px;
   text-decoration: none;
   border-radius: 40px;
+  background-size: 150% auto;
+  transition: background-position 1s ease;
+}
+
+/* hover effect: gradient-color change from left to right, make background 150% wider, and move its position */
+.button:hover {
+  background-position: -200% 0%;
 }
 
 a {
@@ -112,8 +118,9 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
+  padding-top: 0px;
   margin-bottom: 60px;
+  z-index: 3;
 }
 
 header {
@@ -121,7 +128,7 @@ header {
   flex-direction: column;
   align-items: center;
   margin-bottom: 60px;
-  padding: 0 var(--small-page-padding);
+  padding: var(--small-page-padding);
   position: relative;
 }
 
@@ -130,6 +137,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .nav-menu {
@@ -144,10 +152,16 @@ header {
   text-decoration: none;
   list-style: none;
   color: var(--title-color);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.nav-menu-item:hover {
+  transform: scale(1.15);
 }
 
 .nav-icon {
-  display: flex;1345
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
@@ -159,14 +173,109 @@ header {
   height: 20px;
 }
 
-.header-words-container {
+.nav-mode-button:hover {
+  transform: scale(1.15);
+}
+
+.nav-menu-button {
+  width: 20.6px;
+  height: 20.6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-menu-button:hover {
+  transform: scale(1.15);
+}
+
+.menu-circle {
+  border: solid 2.5px var(--title-color);
+  border-radius: 100%;
+  width: 9px;
+  height: 9px;
+}
+
+.menu-cross {
+  position: absolute;
+  transform: translateX(-10%) translateY(-70%);
+  height: 100%;
   width: 100%;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--title-color);
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 0;
+  background-color: var(--bg-color);
+  transition: 1s;
+  width: 100%;
+  height: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.hamburger-menu-shift {
+  height: 100vh;
+}
+
+.hamburger-menu-ul {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  gap: 50px;
+}
+
+.hamburger-menu-li {
+  font-size: 2.5rem;
+}
+
+.header-words-container {
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 15px;
-  z-index: 1;
+  z-index: 2;
+  animation: header-text-animation 2s;
+}
+
+@keyframes header-text-animation {
+  from {
+    transform: translateX(-70%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.header-title-decoration {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.header-decoration {
+  position: absolute;
+  width: 60px;
+  left: -80px;
+  top: -10px;
+  transition: 1s;
+}
+
+.header-decoration:hover {
+  transform: rotate(180deg);
 }
 
 .header-title {
@@ -181,16 +290,70 @@ header {
   /* inline-block can make 'transform' work */
   display: inline-block;
   transform: rotate(10deg) translateX(5%);
+  transition: 0.5s;
+  animation: title-yoga-animation 2s;
+  animation-delay: 1.7s;
+  transform-origin: 10% 10%;
+}
+
+#title-yoga:hover {
+  transform: rotate(0deg);
+}
+
+@keyframes title-yoga-animation {
+  from {
+    transform: rotate(10deg) translateX(5%);
+  }
+  33% {
+    transform: rotate(-5deg) translateX(5%);
+  }
+  66% {
+    transform: rotate(20deg) translateX(5%);
+  }
+  to {
+    transform: rotate(10deg) translateX(5%);
+  }
 }
 
 .header-button {
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
+.header-detail-decoration {
+  position: relative;
+}
+
 .header-details {
-  margin-top: 20px;
-  margin-bottom: 20px;
   color: var(--text-color);
+}
+
+.header-circle-decoration {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  right: 100px;
+  top: 50px;
+  border: solid 1px var(--title-color);
+  transition: 1s;
+}
+
+.header-circle-decoration:hover {
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.header-circle-decoration::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  bottom: 0;
+  left: 5px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: var(--gradient-color);
 }
 
 .header-small-block {
@@ -198,12 +361,54 @@ header {
   justify-content: center;
   gap: 40px;
   margin-bottom: 20px;
-  color: var(--title-color)
+  color: var(--title-color);
 }
 
 .header-img {
   width: 300px;
-  z-index: 0;
+  z-index: 1;
+  animation-delay: 2s;
+  animation: header-img-animation 2s forwards;
+  opacity: 1;
+}
+
+/* replace opening animation */
+#header-img {
+  animation: header-img-rotate 4s infinite ease;
+}
+
+@keyframes header-img-animation {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes header-img-rotate {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+
+  25% {
+    transform: translateX(5px) translateY(5px);
+  }
+
+  50% {
+    transform: translateX(0px) translateY(10px);
+  }
+
+  75% {
+    transform: translateX(-5px) translateY(5px);
+  }
+
+  to {
+    transform: translateX(0) translateY(0);
+  }
 }
 
 /* ---------------- */
@@ -215,13 +420,13 @@ header {
   align-items: center;
   gap: 50px;
   padding: 0 var(--small-page-padding);
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   flex-wrap: wrap;
 }
 
 .influencer-title {
   color: var(--title-color);
-  transform: translateY(20px)
+  transform: translateY(20px);
 }
 
 .influencers-img-container {
@@ -238,7 +443,7 @@ header {
   position: absolute;
   border-radius: 150px;
   background-color: var(--influencer-img-color);
-  box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
   top: 30%;
   bottom: 0;
   left: -10%;
@@ -253,20 +458,17 @@ header {
   z-index: 1;
 }
 
-
 .influencers-details {
   text-align: center;
   width: 300px;
   color: var(--text-color);
-  transform: translateY(20px)
+  transform: translateY(20px);
 }
 
 .influencer-button {
-    cursor: pointer;
-    transform: translateY(20px)
+  cursor: pointer;
+  transform: translateY(20px);
 }
-
-
 
 /* ---------------- */
 
@@ -307,6 +509,9 @@ header {
   width: 300px;
 }
 
+.start-img:hover {
+}
+
 .start-img-container {
   position: relative;
 }
@@ -319,6 +524,22 @@ header {
   align-items: center;
   gap: 5px;
   background-color: var(--container-color);
+}
+
+.start-small-block:hover {
+  .small-block-img {
+    animation: heartbeating 0.4s infinite;
+  }
+}
+
+@keyframes heartbeating {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
 }
 
 .start-small-block-1 {
@@ -457,7 +678,7 @@ header {
     display: flex;
   }
 
-  .nav-menu-button {
+  .nav-menu-button-container {
     display: none;
   }
 
@@ -468,13 +689,28 @@ header {
   }
 
   .header-details {
-    width: 30%;
     text-align: left;
+  }
+
+  .header-detail-decoration {
+    width: 50%;
+  }
+
+  .header-decoration {
+    width: 95px;
+    left: 480px;
+    top: -120px;
+  }
+
+  .header-circle-decoration {
+    right: "";
+    left: -30px;
+    top: -40px;
   }
 
   .header-img {
     position: absolute;
-    right: -5%;
+    right: -100px;
     top: 15%;
     width: 500px;
   }
@@ -490,7 +726,7 @@ header {
   .influencers-img-container {
     gap: 90px;
   }
-  
+
   .influencer-img-bg {
     width: 350px;
     height: 150px;
@@ -523,7 +759,7 @@ header {
   }
 
   .start-img {
-    width: 500px;
+    width: 400px;
   }
 
   /* ---------------- */
@@ -553,7 +789,7 @@ header {
 
 /* 大螢幕的時候改成比例的寫法~ */
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1260px) {
   header {
     padding: var(--small-page-padding) var(--large-page-padding);
   }
@@ -564,45 +800,45 @@ header {
 
   .header-img {
     position: absolute;
-    right: 5%;
-    top: 15%;
+    right: 8%;
+    top: 10%;
     width: 500px;
   }
 
-   /* ---------------- */
+  .header-detail-decoration {
+    width: 40%;
+  }
+
+  /* ---------------- */
 
   .section-influencers {
     flex-direction: row;
     gap: 60px;
     padding: 0 var(--large-page-padding);
   }
-  
-   /* ---------------- */
-   
-   .section-start {
+
+  /* ---------------- */
+
+  .section-start {
     padding: var(--small-page-padding) var(--large-page-padding);
   }
 
   .start-words-container {
     width: 60%;
   }
-  
+
   .start-img {
-    width: 450px;
+    width: 400px;
   }
 
-   /* ---------------- */
+  /* ---------------- */
 
-   .section-workout {
+  .section-workout {
     padding: var(--small-page-padding) var(--large-page-padding);
     gap: 80px;
   }
 
   .workout-words-container {
     width: 60%;
-  }
-
-  .workout-img {
-    width: 400px;
   }
 }

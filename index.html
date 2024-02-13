@@ -33,26 +33,54 @@
           </ul>
           <div class="nav-icon">
             <img class="nav-mode-button" src="./assets/moon.png" alt="" />
-            <img
-              class="nav-menu-button"
-              src="./assets/menu-button.png"
-              alt=""
-            />
+            <div class="nav-menu-button-container">
+              <div class="nav-menu-button">
+                <div class="menu-circle"></div>
+                <div class="menu-circle"></div>
+                <div class="menu-circle"></div>
+                <div class="menu-circle"></div>
+                <div class="menu-cross hidden">&times</div>
+              </div>
+            </div>
           </div>
         </nav>
 
-        <div class="hamburger-menu hidden"></div>
+        <div class="hamburger-menu">
+          <ul class="hamburger-menu-ul">
+            <li
+              class="nav-menu-item hamburger-menu-li"
+              id="text-gradient-color"
+            >
+              Home
+            </li>
+            <li class="nav-menu-item hamburger-menu-li">Health</li>
+            <li class="nav-menu-item hamburger-menu-li">Routine</li>
+            <li class="nav-menu-item hamburger-menu-li">Follow</li>
+          </ul>
+        </div>
 
         <div class="header-words-container">
           <h1 class="header-title">Choose Your</h1>
           <h1 class="header-title">
             Best<span class="button-gradient-color" id="title-yoga">Yoga</span>
           </h1>
-          <h1 class="header-title">Teacher</h1>
-          <p class="header-details">
-            Calm your mind and body with the best yoga teachers available, relax
-            your day and stay positive.
-          </p>
+          <div class="header-title-decoration">
+            <h1 class="header-title">Teacher</h1>
+            <img
+              class="header-decoration"
+              src="./assets/home-star.png"
+              alt=""
+            />
+          </div>
+
+          <div class="header-detail-decoration">
+            <p class="header-details">
+              Calm your mind and body with the best yoga teachers available,
+              relax your day and stay positive.
+            </p>
+            <div class="header-circle-decoration"></div>
+          </div>
+
           <a class="button header-button button-gradient-color" href=""
             >Get Started Free ➜</a
           >
@@ -67,7 +95,12 @@
             </div>
           </div>
         </div>
-        <img class="header-img" src="./assets/home-yoga.png" alt="" />
+        <img
+          class="header-img"
+          id="header-img-close"
+          src="./assets/home-yoga.png"
+          alt=""
+        />
       </header>
 
       <!-- ---------- -->
