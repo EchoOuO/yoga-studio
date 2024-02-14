@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- FONTS LINK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+    <!-- STYLE LINK -->
+    <link rel="stylesheet" href="./css/main.css">
     <title>Yoga Studio | Index</title>
-
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
-      rel="stylesheet"
-    />
   </head>
+  
   <body>
     <main>
       <header>
         <nav>
           <h3 class="nav-brand text-gradient-color" id="nav-brand">Yoga</h3>
           <ul class="nav-menu">
-            <li><a class="nav-menu-item"href="#nav-brand" id="text-gradient-color">Home</a></li>
-            <li><a class="nav-menu-item"href="#influencer">Influencer</a></li>
-            <li><a class="nav-menu-item"href="#start">Start</a></li>
-            <li><a class="nav-menu-item"href="#social-media">Social Media</a></li>
-            <li><a class="nav-menu-item"href="#join">Join Us</a></li>
+            <li><a class="nav-menu-item" href="#nav-brand" id="text-gradient-color">Home</a></li>
+            <li><a class="nav-menu-item" href="#influencer">Influencer</a></li>
+            <li><a class="nav-menu-item" href="#start">Start</a></li>
+            <li><a class="nav-menu-item" href="#social-media">Social Media</a></li>
+            <li><a class="nav-menu-item" href="#join">Join Us</a></li>
           </ul>
           <div class="nav-icon">
             <img class="nav-mode-button" src="./assets/moon.png" alt="" />
@@ -202,9 +199,85 @@
       </section>
 
       <!-- Vinicus's part -->
-      <section></section>
-      <section></section>
-      <section></section>
+      <!-- FOLLOW US PART -->
+      <section id="section__five">
+        <div class="followus">
+          <h2 class="title__firtsection">Follow Us On Instagram</h2>
+          <strong>
+            <h3 class="yoga__faded">#YOGA</h3>
+          </strong>
+        </div>
+        <div class="followus__2">
+          <img class="yoga__pose__1" src="./assets/follow-yoga-1.png" alt="Yoga pose 1">
+          <!-- Button to Social Midia -->
+          <button class="follow__buttom">
+            <p>Follow</p>
+          </button>
+          <img class="yoga__pose__2" src="./assets/follow-yoga-2.png" alt="Yoga pose 2">
+        </div>
+        <div class="followus__3">
+          <img class="yoga__pose__3" src="./assets/follow-yoga-3.png" alt="Yoga pose 3">
+          <img class="yoga__pose__4" src="./assets/follow-yoga-4.png" alt="Yoga pose 4">
+        </div>
+      </section>
+
+      <!-- CONTACT US PART -->
+      <section id="subscribe">
+        <!-- Subscribe CSS box -->
+        <div class="subscribe__box">
+          <form action="">
+            <h2 class="title__newsletter">Join our newsletter</h2>
+            <p>Subscribe to our newsletter to be aware of many things on discounts,<br>
+              gifts, training and much more. Just<br>
+              enter your email.</p>
+            <div class="boxinside__box">
+              <input class="input__email" type="email" id="email" name="email" placeholder="For more information enter your E-mail">
+              <button class="subscribe__buttom" value="Subscribe">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER PART -->
+      <footer class="footer">
+        <div class="yoga__footer">
+          <!-- Title Faded -->
+          <h3 id="faded">Yoga</h3>
+          <p class="footer-words">Take care of your health and<br>
+            your mind with the best<br>
+            Yoga classes.</p>
+        </div>
+        <span class="box__one__footer">
+          <div class="location__footer">
+            <h3>Location</h3>
+            <p class="footer-words">1234 Yoga Studio<br>
+              Yoga City, YG 12345</p>
+          </div>
+          <div class="contact__footer">
+            <h3>Contact</h3>
+            <p class="footer-words">+123 456 7890<br>
+              yoga@email.com</p>
+          </div>
+          <div class="office__footer">
+            <h3>Office</h3>
+            <p class="footer-words">Monday - Saturday<br>
+              9AM - 10PM</p>
+          </div>
+        </span>
+        <!-- Draw a Line -->
+        <hr>
+        <!-- Clickable Social Midia Ancors -->
+        <div id="socialmidia__footer">
+          <a href="https://www.facebook.com"><i class="ph ph-facebook-logo"></i></a>
+          <a href="https://www.instagram.com"><i class="ph ph-instagram-logo"></i></a>
+          <a href="https://www.twitter.com"><i class="ph ph-twitter-logo"></i></a>
+        </div>
+        <!-- Copyright Text -->
+        <div class="copyright__text">
+          <i id="copyrigthicon" class="ph ph-copyright"></i>
+          <p>Copyright Vinicode. All rights reserved</p>
+        </div>
+      </footer>
     </main>
     <script src="./js/main.js" defer></script>
   </body>

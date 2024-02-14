@@ -89,7 +89,17 @@ window.addEventListener("scroll", () => {
     document.querySelector(e).style.transform = "translateY(0%)";
   };
 
-  if (Math.ceil(window.scrollY) > influencerImgPosition * 0.4) {
+  if (
+    Math.ceil(window.scrollY) > influencerImgPosition * 0.6 &&
+    window.innerWidth < 678
+  ) {
+    triggerOpacityTransform(".influencers-img-container");
+  }
+
+  if (
+    Math.ceil(window.scrollY) > influencerImgPosition * 0.3 &&
+    window.innerWidth > 678
+  ) {
     triggerOpacityTransform(".influencers-img-container");
   }
 

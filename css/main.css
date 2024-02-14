@@ -27,6 +27,7 @@ body {
   --influencer-img-color: #e5d9fd;
   --newletter-text-color: #f5f0ff;
   --container-color: #fff;
+  --container: #1e0849;
 }
 
 /* Dark mode color */
@@ -37,6 +38,7 @@ body {
   --influencer-img-color: #372a51;
   --newletter-text-color: #f5f0ff;
   --container-color: #372a51;
+  --container: #14092a;
 }
 
 .text-gradient-color {
@@ -87,7 +89,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  /* font-size: 2rem; */
   font-family: var(--title-font-family);
 }
 
@@ -107,6 +109,95 @@ p,
   font-size: 0.9rem;
   font-family: var(--details-font-family);
 }
+
+/* TESTE CSS */
+
+/* :root {
+  --white-color: #FFF;
+  --gradient-color: linear-gradient(to right, #ff53af, #9f53ff);
+  --footer-text-color: #A197B4;
+  --bg-color: #F5F0FF;
+  --title-color: #220953;
+  --text-color: #4B3E65;
+  --influencer-img-color: #E5D9FD;
+  --newletter-text-color: #F5F0FF;
+  --container-color: #fff;
+  --container: #1E0849;
+  --title-font-family: "Lora", serif;
+  --details-font-family: "Poppins", sans-serif;
+} */
+
+/* DARK THEME COLOR */
+/* .dark-theme {
+  --bg-color: #14092A;
+  --title-color: #D1C0F1;
+  --text-color: #A094B8;
+  --influencer-img-color: #372A51;
+  --newletter-text-color: #F5F0FF;
+  --container-color: #372A51;
+} */
+
+/* SIZE TEXT FONTS */
+
+/* [small size screen < 768px] h1 {
+    font-size: 2.75rem;
+}
+
+h2 {
+    color: var(--title-color);
+    font-family: var(--title-font-family);
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: var(--newletter-text-color);
+    font-family: var(--title-font-family);
+} */
+
+/* p {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-family: var(--details-font-family);
+} */
+
+/* [large size screen>768px] h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+    color: var(--title-color);
+    font-family: var(--title-font-family);
+}
+
+h3 {
+    font-size: 2rem;
+    color: var(--newletter-text-color);
+    font-family: var(--title-font-family);
+}
+
+p {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-family: var(--details-font-family);
+} */
+
+/* BODY DATABASE */
+
+/* * {
+    border: 1px solid red;
+} */
+
+/* body {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-color);
+} */
+
+/* Joe's CSS */
 
 /* ---------------- */
 
@@ -158,10 +249,14 @@ header {
   text-decoration: none;
   list-style: none;
   color: var(--title-color);
-  transition: transform 0.2s;
+  transition: 0.2s;
   cursor: pointer;
+
+  /* anchor = inline-block element, won't be affected by transform: scale(), so jsut make it display: block */
+  display: block;
 }
 
+/* Not work */
 .nav-menu-item:hover {
   transform: scale(1.15);
 }
@@ -381,7 +476,7 @@ header {
 }
 
 @keyframes header-circle-decoration-amination {
-  from{
+  from {
     transform: translateX(-50%) translateY(-50%);
   }
   50% {
@@ -389,7 +484,7 @@ header {
   }
 
   from {
-    transform: translateX(-50%) translateY(-50%);;
+    transform: translateX(-50%) translateY(-50%);
   }
 }
 
@@ -501,7 +596,7 @@ header {
 .influencers-details {
   text-align: center;
   width: 300px;
-  color: var(--text-color);0
+  color: var(--text-color);
   transform: translateY(20px);
 }
 
@@ -629,7 +724,7 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  transition: 1.5s;;
+  transition: 1.5s;
   opacity: 0;
   transform: translateX(-100%);
 }
@@ -649,7 +744,7 @@ header {
   flex-direction: column;
   align-items: center;
   position: relative;
-  transition: 1.5s;;
+  transition: 1.5s;
   opacity: 0;
   transform: translateX(150%);
 }
@@ -695,29 +790,29 @@ header {
 
 @keyframes x-moving-animation-1 {
   from {
-    transform:translateX(0%)
+    transform: translateX(0%);
   }
 
   50% {
-    transform:translateX(-10%)
+    transform: translateX(-10%);
   }
-  
+
   to {
-    transform:translateX(0%)
+    transform: translateX(0%);
   }
 }
 
 @keyframes x-moving-animation-2 {
   from {
-    transform:translateX(0%)
+    transform: translateX(0%);
   }
 
   50% {
-    transform:translateX(10%)
+    transform: translateX(10%);
   }
-  
+
   to {
-    transform:translateX(0%)
+    transform: translateX(0%);
   }
 }
 
@@ -737,13 +832,6 @@ header {
   h3 {
     font-size: 2rem;
     font-family: var(--title-font-family);
-  }
-
-  p,
-  .button,
-  .nav-menu-item {
-    font-size: 1.1rem;
-    font-family: var(--details-font-family);
   }
 
   .small-block-words {
@@ -870,7 +958,7 @@ header {
   }
 }
 
-/* 大螢幕的時候改成比例的寫法~ */
+/* -- RWD -- */
 
 @media screen and (min-width: 1260px) {
   header {
@@ -924,4 +1012,191 @@ header {
   .workout-words-container {
     width: 60%;
   }
+}
+
+/* Vinicius's part */
+
+/* BASIC FORM OF THE PARTS */
+#section__five .yoga__faded {
+  color: var(--gradient-color);
+  font-size: 3rem;
+  margin-bottom: -30px;
+  margin-top: -20px;
+}
+
+.followus,
+.followus__2,
+.followus__3,
+.subscribe__box,
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* IMAGES IN THE FIRST DIV */
+
+.title__firtsection {
+  text-align: center;
+  color: var(--title-color);
+  margin-bottom: 20px;
+}
+
+.followus {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-direction: wrap;
+  padding-left: 570px;
+  width: 420px;
+  height: auto;
+}
+
+.followus__2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.followus__3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.followus__2 .follow__buttom {
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-top: 15rem;
+  width: 88px;
+  height: auto;
+  padding: 15px;
+  border-radius: 64px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+  background: var(--gradient-color);
+}
+
+.yoga__pose__1,
+.yoga__pose__2 {
+  width: 280px;
+  height: auto;
+}
+
+div .yoga__pose__3,
+.yoga__pose__4 {
+  width: 500px;
+  height: auto;
+}
+
+/* FORM IN THE SECOND DIV */
+
+.boxinside__box {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-left: 11rem;
+  padding: 1rem 2rem;
+  width: 500px;
+  height: auto;
+  border-radius: 999px;
+}
+
+.subscribe__buttom {
+  position: absolute;
+  padding: 12px;
+  left: 26rem;
+  bottom: 22px;
+  background: var(--gradient-color);
+  color: var(--white-color);
+  transform: scale(1.1);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.subscribe__box form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 10px;
+  width: 900px;
+  height: auto;
+  border-radius: 2rem;
+  background: var(--gradient-color);
+}
+
+.title__newsletter {
+  text-align: center;
+  color: var(--newletter-text-color);
+  margin-bottom: 20px;
+}
+
+.input__email {
+  padding: 16px;
+  border-radius: 9999px;
+  width: 100%;
+  background-color: var(--container-color);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+}
+
+/* SOCIAL MIDIA IN THE THIRD DIV */
+
+hr {
+  width: 1120px;
+  margin-bottom: -20px;
+}
+
+footer {
+  text-align: left;
+  color: white;
+  background-color: var(--container);
+}
+
+footer .yoga__footer {
+  width: 244px;
+  height: auto;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.footer-words {
+  color: var(--text-color);
+}
+
+.box__one__footer {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width: 606px;
+  height: auto;
+  margin-top: 50px;
+  gap: 50px;
+}
+
+#socialmidia__footer {
+  display: flex;
+  flex-direction: row;
+  width: 192px;
+  height: auto;
+  margin-top: 40px;
+  margin-right: 15rem;
+  gap: 15px;
+}
+
+/* COPYRIGHT SECTION */
+#copyrigthicon {
+  margin-top: 16px;
+}
+
+.copyright__text {
+  display: flex;
+  position: relative;
+  max-width: 20rem;
+  margin-top: 20px;
+  text-align: center;
+  gap: 5px;
 }
