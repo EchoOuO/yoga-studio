@@ -112,7 +112,7 @@ p,
 
 main {
   background-color: var(--bg-color);
-  transition: 0.5s;
+  transition: background-color 0.5s;
   scroll-behavior: smooth;
 }
 
@@ -158,7 +158,7 @@ header {
   text-decoration: none;
   list-style: none;
   color: var(--title-color);
-  transition: 0.2s;
+  transition: transform 0.2s;
   cursor: pointer;
 }
 
@@ -219,7 +219,7 @@ header {
   position: absolute;
   top: 0;
   background-color: var(--bg-color);
-  transition: 1s;
+  transition: height 1s;
   width: 100%;
   height: 0;
   z-index: 4;
@@ -282,7 +282,7 @@ header {
   left: -80px;
   top: -10px;
   transform: rotate(10deg);
-  transition: 1s;
+  transition: transform 1s;
   animation: header-decoration-rotate 0.8s ease-out;
   animation-delay: 1.51s;
 }
@@ -313,7 +313,7 @@ header {
   /* inline-block can make 'transform' work */
   display: inline-block;
   transform: rotate(10deg) translateX(5%);
-  transition: 0.5s;
+  transition: transform 0.5s;
   animation: title-yoga-animation 2s;
   animation-delay: 1.1s;
   transform-origin: 10% 10%;
@@ -359,7 +359,8 @@ header {
   right: 100px;
   top: 50px;
   border: solid 1px var(--title-color);
-  transition: 1s;
+  transition: transform 1s;
+  animation: header-circle-decoration-amination 1s;
 }
 
 .header-circle-decoration:hover {
@@ -377,6 +378,19 @@ header {
   height: 20px;
   border-radius: 100%;
   background: var(--gradient-color);
+}
+
+@keyframes header-circle-decoration-amination {
+  from{
+    transform: translateX(-50%) translateY(-50%);
+  }
+  50% {
+    transform: translateX(0%) translateY(0%);
+  }
+
+  from {
+    transform: translateX(-50%) translateY(-50%);;
+  }
 }
 
 .header-small-block {
@@ -457,7 +471,7 @@ header {
   align-items: center;
   gap: 40px;
   opacity: 0;
-  transform: translateY(15%);
+  transform: translateY(25%);
   transition: 1s;
 }
 
