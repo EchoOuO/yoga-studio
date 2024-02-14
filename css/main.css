@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   /* border: solid 1px black; */
 }
 
@@ -68,7 +69,7 @@ body {
   text-decoration: none;
   border-radius: 40px;
   background-size: 150% auto;
-  transition: background-position 1s ease;
+  transition: background-position 0.5s ease;
 }
 
 /* hover effect: gradient-color change from left to right, make background 150% wider, and move its position */
@@ -112,6 +113,7 @@ p,
 main {
   background-color: var(--bg-color);
   transition: 0.5s;
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -120,7 +122,7 @@ nav {
   justify-content: space-between;
   padding-top: 0px;
   margin-bottom: 60px;
-  z-index: 3;
+  z-index: 5;
 }
 
 header {
@@ -146,6 +148,10 @@ header {
   display: none;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.nav-menu > li {
+  list-style: none;
 }
 
 .nav-menu-item {
@@ -216,7 +222,7 @@ header {
   transition: 1s;
   width: 100%;
   height: 0;
-  z-index: 2;
+  z-index: 4;
   overflow: hidden;
 }
 
@@ -234,6 +240,10 @@ header {
   gap: 50px;
 }
 
+.hamburger-menu-ul > li {
+  list-style: none;
+}
+
 .hamburger-menu-li {
   font-size: 2.5rem;
 }
@@ -246,7 +256,7 @@ header {
   text-align: center;
   gap: 15px;
   z-index: 2;
-  animation: header-text-animation 2s;
+  animation: header-text-animation 1.5s;
 }
 
 @keyframes header-text-animation {
@@ -271,11 +281,24 @@ header {
   width: 60px;
   left: -80px;
   top: -10px;
+  transform: rotate(10deg);
   transition: 1s;
+  animation: header-decoration-rotate 0.8s ease-out;
+  animation-delay: 1.51s;
 }
 
 .header-decoration:hover {
   transform: rotate(180deg);
+}
+
+@keyframes header-decoration-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(370deg);
+  }
 }
 
 .header-title {
@@ -292,7 +315,7 @@ header {
   transform: rotate(10deg) translateX(5%);
   transition: 0.5s;
   animation: title-yoga-animation 2s;
-  animation-delay: 1.7s;
+  animation-delay: 1.1s;
   transform-origin: 10% 10%;
 }
 
@@ -368,7 +391,7 @@ header {
   width: 300px;
   z-index: 1;
   animation-delay: 2s;
-  animation: header-img-animation 2s forwards;
+  animation: header-img-animation 1.5s forwards;
   opacity: 1;
 }
 
@@ -433,6 +456,9 @@ header {
   display: flex;
   align-items: center;
   gap: 40px;
+  opacity: 0;
+  transform: translateY(15%);
+  transition: 1s;
 }
 
 .influencers-img-container > div {
@@ -461,7 +487,7 @@ header {
 .influencers-details {
   text-align: center;
   width: 300px;
-  color: var(--text-color);
+  color: var(--text-color);0
   transform: translateY(20px);
 }
 
@@ -487,6 +513,9 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  transform: translateX(50%);
+  opacity: 0;
+  transition: 1.5s;
 }
 
 .start-title {
@@ -503,6 +532,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 1.5s;
+  transform: translateX(-100%);
+  opacity: 0;
 }
 
 .start-img {
@@ -524,13 +556,14 @@ header {
   align-items: center;
   gap: 5px;
   background-color: var(--container-color);
+  animation: heartbeating 0.4s infinite;
 }
 
-.start-small-block:hover {
+/* .start-small-block:hover {
   .small-block-img {
     animation: heartbeating 0.4s infinite;
   }
-}
+} */
 
 @keyframes heartbeating {
   from {
@@ -538,7 +571,7 @@ header {
   }
 
   to {
-    transform: scale(1.15);
+    transform: scale(1.05);
   }
 }
 
@@ -582,6 +615,9 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  transition: 1.5s;;
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 .workout-title {
@@ -599,6 +635,9 @@ header {
   flex-direction: column;
   align-items: center;
   position: relative;
+  transition: 1.5s;;
+  opacity: 0;
+  transform: translateX(150%);
 }
 
 .workout-img {
@@ -631,11 +670,41 @@ header {
 .workout-small-block-1 {
   right: -15%;
   top: 5%;
+  animation: x-moving-animation-1 3s ease infinite;
 }
 
 .workout-small-block-2 {
   left: -10%;
   bottom: 10%;
+  animation: x-moving-animation-2 3s ease infinite;
+}
+
+@keyframes x-moving-animation-1 {
+  from {
+    transform:translateX(0%)
+  }
+
+  50% {
+    transform:translateX(-10%)
+  }
+  
+  to {
+    transform:translateX(0%)
+  }
+}
+
+@keyframes x-moving-animation-2 {
+  from {
+    transform:translateX(0%)
+  }
+
+  50% {
+    transform:translateX(10%)
+  }
+  
+  to {
+    transform:translateX(0%)
+  }
 }
 
 /* ---------------- */
