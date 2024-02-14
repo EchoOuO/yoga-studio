@@ -90,7 +90,7 @@ window.addEventListener("scroll", () => {
   };
 
   if (
-    Math.ceil(window.scrollY) > influencerImgPosition * 0.55 &&
+    Math.ceil(window.scrollY) > influencerImgPosition * 0.5 &&
     window.innerWidth < 678
   ) {
     triggerOpacityTransform(".influencers-img-container");
@@ -107,7 +107,7 @@ window.addEventListener("scroll", () => {
     triggerOpacityTransform(".start-img-container");
   }
 
-  if (Math.ceil(window.scrollY) > startWordsPosition * 0.55) {
+  if (Math.ceil(window.scrollY) > startWordsPosition * 0.63) {
     triggerOpacityTransform(".start-words-container");
   }
 

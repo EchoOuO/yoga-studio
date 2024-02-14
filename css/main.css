@@ -111,6 +111,7 @@ p,
 .small-block-words {
   font-size: 0.9rem;
   font-family: var(--details-font-family);
+  color: var(--title-color);
 }
 
 /* TESTE CSS */
@@ -840,7 +841,6 @@ header {
   .small-block-words {
     font-size: 0.9rem;
     font-weight: bold;
-    color: var(--title-color);
   }
 
   /* ---------------- */
