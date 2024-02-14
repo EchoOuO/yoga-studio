@@ -34,7 +34,7 @@ for (let i = 0; i < hamburgerMenuButtonCircle.length; i++) {
 }
 
 // make cross button hidden & menu button appear
-for (let i = 0; i < hamburgerMenuButtonCircle.length; i++) {
+for (let i = 0; i < hamburgerMenuItem.length; i++) {
   hamburgerMenuItem[i].addEventListener("click", function () {
     hamburgerMenu.classList.toggle("hamburger-menu-shift");
     hamburgerMenuButtonClose.classList.toggle("hidden");
@@ -90,15 +90,15 @@ window.addEventListener("scroll", () => {
   };
 
   if (
-    Math.ceil(window.scrollY) > influencerImgPosition * 0.6 &&
+    Math.ceil(window.scrollY) > influencerImgPosition * 0.55 &&
     window.innerWidth < 678
   ) {
     triggerOpacityTransform(".influencers-img-container");
   }
 
   if (
-    Math.ceil(window.scrollY) > influencerImgPosition * 0.3 &&
-    window.innerWidth > 678
+    Math.ceil(window.scrollY) > influencerImgPosition * 0.4 &&
+    window.innerWidth >= 678
   ) {
     triggerOpacityTransform(".influencers-img-container");
   }
